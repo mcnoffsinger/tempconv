@@ -50,11 +50,10 @@ def convert(value: float, from_unit: str, to_unit: str) -> float:
     to_unit = to_unit.upper()
 
     # Check input for correct letters
-    if not (from_unit == 'C' or from_unit == 'F' or from_unit == 'K'): 
+    if not (from_unit == 'C' or from_unit == 'F' or from_unit == 'K'):
         raise ValueError("invalid unit")
-    if not (to_unit == 'C' or to_unit == 'F' or to_unit == 'K'): 
-        raise ValueError("invalid unit") 
-
+    if not (to_unit == 'C' or to_unit == 'F' or to_unit == 'K'):
+        raise ValueError("invalid unit")
 
     # If same unit, return as-is
     if from_unit == to_unit:

@@ -37,28 +37,28 @@ def test_f_to_c_cases(f, expected_c):
 
 
 @pytest.mark.parametrize("c, expected_k", [
-    (1,     274.15),   
-    (21.5,  294.65),  
-    (50,    323.15),    
+    (1,     274.15),
+    (21.5,  294.65),
+    (50,    323.15),
 ])
 def test_c_to_k_cases(c, expected_k):
     assert celsius_to_kelvin(c) == pytest.approx(expected_k, rel=1e-3)
 
 
 @pytest.mark.parametrize("k, expected_c", [
-    (274.15,    1),   
-    (294.65, 21.5),  
-    (323.15,   50),    
+    (274.15,    1),
+    (294.65, 21.5),
+    (323.15,   50),
 ])
 def test_k_to_c_cases(k, expected_c):
     assert kelvin_to_celsius(k) == pytest.approx(expected_c, rel=1e-3)
 
 
 @pytest.mark.parametrize("value, fromval, toval, expected", [
-    (274.15, 'K', 'C',   1),   
-    (5, 'C', 'C', 5), 
+    (274.15, 'K', 'C',   1),
+    (5, 'C', 'C', 5),
     (32, 'F', 'c', 0),
-    (0, 'c', 'f', 32),    
+    (0, 'c', 'f', 32),
 ])
 def test_convert(value, fromval, toval, expected):
     assert convert(value, fromval, toval) == pytest.approx(expected, rel=1e-3)
